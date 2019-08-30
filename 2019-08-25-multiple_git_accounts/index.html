@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-
-
-
-
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -16,13 +11,8 @@
   <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
   <meta name="google-site-verification" content="3HLS2iyyOnkg_AMP606wyvq85B2TZlEIWjQWTf6HV2I">
   <meta name="baidu-site-verification" content="pMovHZW29I,mCbwt8v2E2">
-
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
-
-
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
@@ -56,7 +46,6 @@
     sidebarPadding: 40
   };
 </script>
-
   <meta name="description" content="欢迎！ 相信当你因为某种原因，创建自己的第二个 Github 账号时，boom。Permission denied。git 不知道哪个仓库属于哪个账号了。别急，只需3步即可为你的新仓库配好账号，让你后续的 push 等操作都和一个账号一样顺滑。">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
@@ -70,8 +59,6 @@
 <meta name="twitter:title" content="如何管理同一电脑上的多个git账号 - 步骤&amp;解释">
 <meta name="twitter:description" content="欢迎！ 相信当你因为某种原因，创建自己的第二个 Github 账号时，boom。Permission denied。git 不知道哪个仓库属于哪个账号了。别急，只需3步即可为你的新仓库配好账号，让你后续的 push 等操作都和一个账号一样顺滑。">
   <link rel="canonical" href="https://lhwemn.coding-pages.com/2019-08-25-multiple_git_accounts/">
-
-
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
@@ -82,18 +69,8 @@
     isArchive: false
   };
 </script>
-
   <title>如何管理同一电脑上的多个git账号 - 步骤&解释 | THU CST 的零基础代码学习</title>
   <meta name="generator" content="Hexo 3.9.0">
-  
-
-
-
-
-
-
-
-
   <noscript>
   <style>
   .use-motion .brand,
@@ -105,29 +82,23 @@
   .use-motion .post-header,
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
-
   .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
-
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
-
 </head>
-
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <div class="container use-motion">
     <div class="headband"></div>
-
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
-
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -136,9 +107,7 @@
       </a>
     </div>
         <h1 class="site-subtitle" itemprop="description">THU课程同步笔记</h1>
-      
   </div>
-
   <div class="site-nav-toggle">
     <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
@@ -147,128 +116,62 @@
     </button>
   </div>
 </div>
-
-
 <nav class="site-nav">
-  
   <ul id="menu" class="menu">
-      
-      
-      
-        
         <li class="menu-item menu-item-home">
-      
-    
-
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-tags">
-      
-    
-
     <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
-
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-categories">
-      
-    
-
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
-
   </li>
-      
-      
-      
-        
         <li class="menu-item menu-item-archives">
-      
-    
-
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-
   </li>
   </ul>
-
-    
-
 </nav>
 </div>
     </header>
-
-    
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
-
-
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
-            
-
   <div id="posts" class="posts-expand">
       <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
   <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://lhwemn.coding-pages.com/2019-08-25-multiple_git_accounts/">
-
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="直角世界">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
-
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="THU CST 的零基础代码学习">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">如何管理同一电脑上的多个git账号 - 步骤&解释
-
-          
         </h2>
-
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
               <time title="创建时间：2019-08-25 12:17:02" itemprop="dateCreated datePublished" datetime="2019-08-25T12:17:02+08:00">2019-08-25</time>
             </span>
-          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
-              
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂记/" itemprop="url" rel="index"><span itemprop="name">杂记</span></a></span>
-
-                
-                
-              
             </span>
-          
-
-          
             <span id="/2019-08-25-multiple_git_accounts/" class="post-meta-item leancloud_visitors" data-flag-title="如何管理同一电脑上的多个git账号 - 步骤&解释" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -276,35 +179,19 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
-          
-  
   <span class="post-meta-item">
-    
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
-        
-      
       <span class="post-meta-item-text">Valine：</span>
-    
     <a title="valine" href="/2019-08-25-multiple_git_accounts/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08-25-multiple_git_accounts/" itemprop="commentCount"></span></a>
   </span>
-  
-  
-
         </div>
       </header>
-
-    
-    
-    
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>欢迎！</p>
 <p>相信当你因为某种原因，创建自己的第二个 Github 账号时，boom。Permission denied。git 不知道哪个仓库属于哪个账号了。别急，只需3步即可为你的新仓库配好账号，让你后续的 push 等操作都和一个账号一样顺滑。</p>
 <a id="more"></a>
-
 <ul>
 <li><p>注：简单但不一定成功的方法：</p>
 <ol>
@@ -316,7 +203,6 @@
 </ul>
 <h3 id="第一步-创建新的-SSH-密钥"><a href="#第一步-创建新的-SSH-密钥" class="headerlink" title="第一步 创建新的 SSH 密钥"></a>第一步 创建新的 SSH 密钥</h3><p>就像第一次用 git 一样，打开git bash，输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</span><br></pre></td></tr></table></figure>
-
 <p>把<code>your_email@example.com</code>替换成你的Github邮箱。</p>
 <p>（不是其实也没关系啦，不要跟别的账号重复就好。那样生成的公钥密钥都是完全一样的。这个邮箱会出现在xxx.pub文件的末尾。）</p>
 <p>然后在显示出<code>Enter file in which to save the key</code>字样时，输入一个新的路径和文件名。如果和第一个账号一样用默认名字（<code>~/.ssh/id_rsa</code>），就会被 Overwrite 掉。换成例如（<code>~/.ssh/id_rsa_1</code>）就好，不需要后缀名。</p>
@@ -327,14 +213,11 @@
 <p>看看里边有没有一个叫<code>config</code>的文件（没有后缀名哦）。没有就创建一个。</p>
 <p>然后往里写这样几句话：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host 你的GitHub账号.github.com</span><br><span class="line">  Hostname github.com</span><br><span class="line">  PreferredAuthentications publickey</span><br><span class="line">  IdentityFile 刚才写路径和文件名</span><br><span class="line">  User 你的Github用户名或邮箱</span><br></pre></td></tr></table></figure>
-
 <p>（这里Host只是个任起的名字而已。本段话的意思是，如果某个 Git 仓库的Host 是 <code>你的GitHub账号.github.com</code>，就用这些<code>Hostname</code>和<code>IdentityFile</code>等设置。）</p>
 <h3 id="第三步-修改本地仓库设置"><a href="#第三步-修改本地仓库设置" class="headerlink" title="第三步 修改本地仓库设置:"></a>第三步 修改本地仓库设置:</h3><p>打开你希望推到新账号的本地 Git 仓库，找到 .git 文件夹下的 config 文件（这个应该有），找到形如</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = https://github.com/你的Github账号/本Github仓库名.git</span><br></pre></td></tr></table></figure>
-
 <p>这两行，把第二行替换为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url = git@你的Github账号.github.com:你的Github账号/本Github仓库名.git</span><br></pre></td></tr></table></figure>
-
 <p>即可。</p>
 <p>（这里是定义 Github 在向云端推送时的仓库地址的。Github 一般用 Https 方式，这就是原先的 URL 是一个 https 开头的网址，而我们修改为了 SSH 格式（Host : 用户名 / 仓库地址），这样才能应用上之前的 Host 设置。也就是，其实第2步 Host 行和第3步 url 行输入的“你的Github账号”改成别的什么都行，只要二者相同即可。）</p>
 <h3 id="（可选）第四步-修改作者："><a href="#（可选）第四步-修改作者：" class="headerlink" title="（可选）第四步 修改作者："></a>（可选）第四步 修改作者：</h3><p>如果你现在进行 commit 和 push 的话，你很有可能会发现<strong>作者</strong>显示的依然是最早的账号。</p>
@@ -345,16 +228,7 @@
 <hr>
 <p>大功告成！</p>
 <p>如果你依然有疑问，请务必在下方留言哦！新人博主，请多多指教！</p>
-
     </div>
-
-    
-    
-    
-        
-      
-        
-
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
@@ -367,62 +241,30 @@
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
-
-      
-
       <footer class="post-footer">
-          
-            
-          
           <div class="post-tags">
-            
               <a href="/tags/Git/" rel="tag"># Git</a>
-            
           </div>
-        
-
-        
-
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-              
                 <a href="/2019-08-25-intro/" rel="next" title="序">
                   <i class="fa fa-chevron-left"></i> 序
                 </a>
-              
             </div>
-
             <span class="post-nav-divider"></span>
-
             <div class="post-nav-prev post-nav-item">
-              
                 <a href="/2019-08-29-basics-1-overview/" rel="prev" title="程设基础 第一周：C++第一行代码">
                   程设基础 第一周：C++第一行代码 <i class="fa fa-chevron-right"></i>
                 </a>
-              
             </div>
           </div>
-        
       </footer>
-    
   </div>
-  
-  
-  
   </article>
-
   </div>
-
-
           </div>
-          
-    
     <div class="comments" id="comments"></div>
-  
-
         </div>
-          
-  
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -430,15 +272,8 @@
       <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-
   <aside class="sidebar">
     <div class="sidebar-inner">
-        
-        
-        
-        
-      
-
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           文章目录
@@ -447,14 +282,11 @@
           站点概览
         </li>
       </ul>
-
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步-创建新的-SSH-密钥"><span class="nav-number">1.</span> <span class="nav-text">第一步 创建新的 SSH 密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步-修改-SSH-的-Host-设置"><span class="nav-number">2.</span> <span class="nav-text">第二步 修改 SSH 的 Host 设置:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步-修改本地仓库设置"><span class="nav-number">3.</span> <span class="nav-text">第三步 修改本地仓库设置:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（可选）第四步-修改作者："><span class="nav-number">4.</span> <span class="nav-text">（可选）第四步 修改作者：</span></a></li></ol></div>
-        
       </div>
       <!--/noindex-->
-
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">直角世界</p>
@@ -462,68 +294,30 @@
 </div>
   <nav class="site-state motion-element">
       <div class="site-state-item site-state-posts">
-        
           <a href="/archives/">
-        
           <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-categories">
-        
-          
             <a href="/categories/">
-          
-        
-        
-        
-          
-        
-          
-        
         <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
-    
-      
-      
       <div class="site-state-item site-state-tags">
-        
-          
             <a href="/tags/">
-          
-        
-        
-        
-          
-        
-          
-        
-          
-        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
-    
   </nav>
-
-
-
       </div>
-
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
-
-
       </div>
     </main>
-
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
@@ -535,38 +329,15 @@
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-        
       </div>
     </footer>
   </div>
-
-  
-
-
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
-
-
-
-  
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -576,34 +347,6 @@
       s.parentNode.insertBefore(bp, s);
     })();
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-
 <script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -627,6 +370,5 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   });
 }, window.Valine);
 </script>
-
 </body>
 </html>
