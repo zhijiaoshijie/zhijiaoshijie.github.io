@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+
+
+
+
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -11,8 +16,13 @@
   <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
   <meta name="google-site-verification" content="3HLS2iyyOnkg_AMP606wyvq85B2TZlEIWjQWTf6HV2I">
   <meta name="baidu-site-verification" content="pMovHZW29I,mCbwt8v2E2">
+
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
@@ -46,6 +56,7 @@
     sidebarPadding: 40
   };
 </script>
+
   <meta name="description" content="欢迎！ 这里是清华计算机系徐明星老师在16年开设的《程序设计基础（30240233-1）》课程的同步笔记整理。第一节课马上要开始啦！找个（后排的）位置坐好，开始上课吧！ 对了，首先问一下，你也是初入代码的新人吗？如果你已经有一定基础，跳过本节课，甚至整个程设基础课程吧。这门课是讲给那些一点点基础都没有，可能连命令行和开发环境是什么都不知道的同学们，就像三年前的我一样。我明白零基础入门的痛苦。  三">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
@@ -59,6 +70,8 @@
 <meta name="twitter:title" content="程设基础 第一周：C++第一行代码">
 <meta name="twitter:description" content="欢迎！ 这里是清华计算机系徐明星老师在16年开设的《程序设计基础（30240233-1）》课程的同步笔记整理。第一节课马上要开始啦！找个（后排的）位置坐好，开始上课吧！ 对了，首先问一下，你也是初入代码的新人吗？如果你已经有一定基础，跳过本节课，甚至整个程设基础课程吧。这门课是讲给那些一点点基础都没有，可能连命令行和开发环境是什么都不知道的同学们，就像三年前的我一样。我明白零基础入门的痛苦。  三">
   <link rel="canonical" href="https://lhwemn.coding-pages.com/2019-08-29-basics-1-overview/">
+
+
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
@@ -69,8 +82,18 @@
     isArchive: false
   };
 </script>
+
   <title>程设基础 第一周：C++第一行代码 | THU CST 的零基础代码学习</title>
   <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
   <noscript>
   <style>
   .use-motion .brand,
@@ -82,23 +105,29 @@
   .use-motion .post-header,
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
+
   .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
+
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
+
 </head>
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <div class="container use-motion">
     <div class="headband"></div>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
+
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -107,7 +136,9 @@
       </a>
     </div>
         <h1 class="site-subtitle" itemprop="description">THU课程同步笔记</h1>
+      
   </div>
+
   <div class="site-nav-toggle">
     <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
@@ -116,62 +147,128 @@
     </button>
   </div>
 </div>
+
+
 <nav class="site-nav">
+  
   <ul id="menu" class="menu">
+      
+      
+      
+        
         <li class="menu-item menu-item-home">
+      
+    
+
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
   </li>
+      
+      
+      
+        
         <li class="menu-item menu-item-tags">
+      
+    
+
     <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
   </li>
+      
+      
+      
+        
         <li class="menu-item menu-item-categories">
+      
+    
+
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
   </li>
+      
+      
+      
+        
         <li class="menu-item menu-item-archives">
+      
+    
+
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
   </li>
   </ul>
+
+    
+
 </nav>
 </div>
     </header>
+
+    
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+
+
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
+            
+
   <div id="posts" class="posts-expand">
       <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
   <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://lhwemn.coding-pages.com/2019-08-29-basics-1-overview/">
+
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="直角世界">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
+
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="THU CST 的零基础代码学习">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">程设基础 第一周：C++第一行代码
+
+          
         </h2>
+
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
               <time title="创建时间：2019-08-29 10:55:01" itemprop="dateCreated datePublished" datetime="2019-08-29T10:55:01+08:00">2019-08-29</time>
             </span>
+          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
+              
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/程设基础笔记/" itemprop="url" rel="index"><span itemprop="name">程设基础笔记</span></a></span>
+
+                
+                
+              
             </span>
+          
+
+          
             <span id="/2019-08-29-basics-1-overview/" class="post-meta-item leancloud_visitors" data-flag-title="程设基础 第一周：C++第一行代码" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -179,16 +276,31 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+          
+  
   <span class="post-meta-item">
+    
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
+        
+      
       <span class="post-meta-item-text">Valine：</span>
+    
     <a title="valine" href="/2019-08-29-basics-1-overview/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08-29-basics-1-overview/" itemprop="commentCount"></span></a>
   </span>
+  
+  
+
         </div>
       </header>
+
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
+
+      
         <p>欢迎！</p>
 <p>这里是清华计算机系徐明星老师在16年开设的《程序设计基础（30240233-1）》课程的同步笔记整理。第一节课马上要开始啦！找个（后排的）位置坐好，开始上课吧！</p>
 <p>对了，首先问一下，你也是初入代码的新人吗？如果你已经有一定基础，跳过本节课，甚至整个程设基础课程吧。这门课是讲给那些<strong>一点点</strong>基础都没有，可能连<strong>命令行</strong>和<strong>开发环境</strong>是什么都不知道的同学们，<strong>就像三年前的我一样</strong>。我明白<strong>零基础入门</strong>的痛苦。</p>
@@ -196,6 +308,7 @@
 <p>三年之后，造过计算机，写过编译器和OS，我认为我大概有资格写一篇教程了。当然，是跟着当年那个坐在六教蒙圈的自己，跟着伟大的徐BOSS一起，敲开代码界那扇厚重的门。</p>
 </blockquote>
 <a id="more"></a>
+
 <h3 id="教材和教学计划"><a href="#教材和教学计划" class="headerlink" title="教材和教学计划"></a>教材和教学计划</h3><p>教材：在当时，计算机系程序设计基础课的教材是那本红皮的，吴文虎和徐明星老师编著的，《程序设计基础（第三版）》。不过个人认为写的一般，当时学习时也没翻开过几次，所以各位大概只要<strong>好好听讲</strong>就可以啦。</p>
 <p>课程大概分为几个阶段：</p>
 <ol>
@@ -239,8 +352,10 @@
 <p>输出，也叫打印，就是在屏幕上显示几个字符。打印（print）是最早计算机没有显示屏的时候，只能在纸上打字，遗留下来的名词。</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"Hello World!"</span>)</span><br></pre></td></tr></table></figure>
+
 <p>这是Python版本。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World!"</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这是C++版本。</p>
 <p>上面两段话就是<strong>程序</strong>。一段Python程序，一段C++程序。程序就是用某语言说出来的一段话。这两段话语言不同，但是意思都是相同的——“往屏幕上显示几个大字：Hello World!”</p>
 <p>这里先不教每一行的意义。我们先教最关键的：如何运行它，让你看到这几个大字。</p>
@@ -249,6 +364,7 @@
 </blockquote>
 <h3 id="如何运行你的第一行C-程序"><a href="#如何运行你的第一行C-程序" class="headerlink" title="如何运行你的第一行C++程序"></a>如何运行你的第一行C++程序</h3><p>还是用上面的例子：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>这就是那段意为“往屏幕上显示几个大字：Hello World!”的程序。下面讲解怎么运行它，让你的电脑在这段代码的指引下，真正显示出来Hello World。</p>
 <h4 id="写一段程序的简单过程-（之一）"><a href="#写一段程序的简单过程-（之一）" class="headerlink" title="写一段程序的简单过程 （之一）"></a>写一段程序的简单过程 （之一）</h4><p>打开菜鸟教程C++教程：<a href="https://www.runoob.com/cplusplus/cpp-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/cplusplus/cpp-tutorial.html</a></p>
 <p>在那个巨大的“编译/执行 C++ 程序”底下，你会看到跟上面的代码基本一样的东西。放心，那些空格空行不会影响程序的含义，他们是一样的。或者你把我的代码复制到那个文本框里也行。然后点“运行实例 »”，你就看到你的程序的执行效果啦——云端的电脑在你的代码的指示下，把“Hello, world!”几个大字打到了右侧的“运行结果”框里。</p>
@@ -268,11 +384,14 @@
 </li>
 <li><p>编译并运行代码。Dev C++用户只要按下F11就可以了。屏幕下方会弹出一个窗口并显示类似这种东西：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> Filename: D:\prog10\Desktop\Untitled1.cpp</span><br><span class="line">- Compiler Name: TDM-GCC 4.9.2 64-bit Release</span><br><span class="line"></span><br><span class="line">Processing C++ source file...</span><br><span class="line">--------</span><br><span class="line">- C++ Compiler: D:\prog\dev c++\Dev-Cpp\MinGW64\bin\g++.exe</span><br><span class="line">- Command: g++.exe &quot;D:\prog10\Desktop\Untitled1.cpp&quot; -o &quot;D:\prog10\Desktop\Untitled1.exe&quot;</span><br></pre></td></tr></table></figure>
+
 <p>等等。</p>
 <p>然后过几秒钟会显示这个：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Compilation results...</span><br><span class="line">--------</span><br><span class="line">- Errors: 0</span><br><span class="line">- Warnings: 0</span><br><span class="line">- Output Filename: D:\prog10\Desktop\Untitled1.exe</span><br><span class="line">- Output Size: 1.83197784423828 MiB</span><br><span class="line">- Compilation Time: 11.22s</span><br></pre></td></tr></table></figure>
+
 <p>然后就会弹出一个黑窗口，显示这种东西：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br><span class="line">--------------------------------</span><br><span class="line">Process exited after 0.132 seconds with return value 0</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
+
 <p>恭喜！你已经成功地执行了“往屏幕上显示几个大字：Hello World!”这个程序！</p>
 </li>
 </ol>
@@ -302,11 +421,13 @@
 <h4 id="运行-exe-文件"><a href="#运行-exe-文件" class="headerlink" title="运行 .exe 文件"></a>运行 .exe 文件</h4><p>下面双击那个.exe 文件吧。诶？为什么什么都没有发生？（或者说，有什么东西一闪而过？）</p>
 <p>实际上，你的 .exe 文件干了这么几件事情：打开一个<strong>命令行</strong>（后面解释）窗口，干他要干的事情，然后关闭这个窗口。也就是说，你的电脑打开窗口之后，瞬间完成了写那几个大字，然后就把窗口关闭了；这一过程可能只需要 0.1 秒！这就是为什么你看不清它的原因。但是，你在Dev C++里按F11时，运行结束后，电脑并不会立即关闭窗口，而是显示出了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--------------------------------</span><br><span class="line">Process exited after 0.132 seconds with return value 0</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
+
 <p>这样几句话。按任意键之后，窗口就关闭了。Dev C++给你留出了欣赏你的杰作的时间，甚至帮你统计了你的代码的运行时间！是不是非常人性化？</p>
 <h4 id="命令行的基本介绍（懂的同学可以跳过）"><a href="#命令行的基本介绍（懂的同学可以跳过）" class="headerlink" title="命令行的基本介绍（懂的同学可以跳过）"></a>命令行的基本介绍（懂的同学可以跳过）</h4><p>那么，什么是命令行？</p>
 <h5 id="启动命令行"><a href="#启动命令行" class="headerlink" title="启动命令行"></a>启动命令行</h5><p>在Windows电脑里，按Windows徽标键+R，调出“运行”窗口。在那行文本框中输入<code>cmd</code>，回车，就会弹出一个类似的黑洞洞的窗口，有个光标在闪烁，你可以往里敲字符。这玩意学名叫“命令提示符”，这就是我们说的命令行。崭新的命令行可能会长这样：</p>
 <p>如果你是Win10系统，也打开了左下角的Cortana搜索框，在那里输入<code>cmd</code>，最上面的搜索结果也应该是“命令提示符”，点击它，也能打开命令行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Microsoft Windows [版本 10.0.18362.295]</span><br><span class="line">(c) 2019 Microsoft Corporation。保留所有权利。</span><br><span class="line"></span><br><span class="line">C:\Users\lm&gt;</span><br></pre></td></tr></table></figure>
+
 <p>然后有个光标在<code>C:\Users\lm&gt;</code>右边闪烁。</p>
 <p>MacOS的同学们的命令行学名叫“Terminal（终端）”，也可以通过</p>
 <ol>
@@ -315,6 +436,7 @@
 </ol>
 <p>打开之后差不多应该是这样的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Last Login: 某个日期 on xxx</span><br><span class="line">xxx:~ xxx$</span><br></pre></td></tr></table></figure>
+
 <p>有个光标在$符右边闪烁。</p>
 <h5 id="命令行的基本用法"><a href="#命令行的基本用法" class="headerlink" title="命令行的基本用法"></a>命令行的基本用法</h5><p>命令行的学问可大了——里边有一套自己的语言（甚至Windows和MacOS的语言还不一样）。一些程序员甚至只用命令行完成他们的所有工作。当然，在这里只讲一些基础，如果感兴趣，可以搜搜别的教程（比如“CMD入门”之类的）。</p>
 <p>命令行的基本用法就是：输入一行代码，然后回车。这个语言就会被电脑执行。这些代码要遵循命令行的语言规范，当然，这个语言要比C++简单多了，但是本质上是一样的——都是用字符描述你的意图，输入进去，以控制电脑完成你想要做的事情。</p>
@@ -324,6 +446,7 @@
 <p>目录（directory），或者叫“路径”就是文件放在你电脑里的位置——Windows电脑里以“C:\”，“D:\”之类的起头，代表在C盘或D盘下，然后一步步深入下去。而打开Windows的资源管理器（就是“我的电脑”，“此电脑”这种窗口），找到顶上的地址栏（就那一条写着 “此电脑 &gt; 桌面” 或者 “此电脑 &gt; S1D(D:) &gt; workspace”这种东西的地方），点一下它，就会变成被选中的“D:\workspace”这种东西——这就是目录。</p>
 <p>命令行里也跟资源管理器一样，是有个目录的：看看你的命令行最后一行，光标闪烁的地方，形如：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lm&gt;</span><br></pre></td></tr></table></figure>
+
 <p><code>&gt;</code>是个提示你输入的符号，而前面的<code>C:\Users\lm</code>就是命令行的目录。</p>
 <blockquote>
 <p>这是Windows下，MacOS的命令行下一开始就是一个<code>~</code>（就是冒号后面，你的用户名和<code>$</code>号前面的部分），代表根目录。并且MacOS的分隔符是正斜杠<code>/</code>,例如你在根目录下新建了个workspace文件夹，它的目录就是<code>~/workspace</code>。</p>
@@ -331,6 +454,7 @@
 <h5 id="dir命令"><a href="#dir命令" class="headerlink" title="dir命令"></a>dir命令</h5><p>下面教大家两个命令（就是往命令行里写的语句）：<code>dir</code>（MacOS是<code>ls</code>）和<code>cd</code>。这是两个关于<strong>目录</strong>的命令：<code>dir</code>是列出目录下的所有文件和文件夹；<code>cd</code>是切换目录。</p>
 <p>这个目录是干什么用的呢？直接输入<code>dir</code>（MacOS是<code>ls</code>），回车：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">C:\Users\lm&gt;dir</span><br><span class="line"> 驱动器 C 中的卷是 Windows</span><br><span class="line"> 卷的序列号是 4873-4168</span><br><span class="line"></span><br><span class="line"> C:\Users\lm 的目录</span><br><span class="line"></span><br><span class="line">2019/08/29  10:40    &lt;DIR&gt;          .</span><br><span class="line">2019/08/29  10:40    &lt;DIR&gt;          ..</span><br><span class="line">2018/10/05  21:40    &lt;DIR&gt;          .3T</span><br><span class="line">2018/12/03  10:22    &lt;DIR&gt;          .altera.quartus</span><br><span class="line">2018/01/18  21:49    &lt;DIR&gt;          .anaconda</span><br><span class="line">2019/04/03  17:40    &lt;DIR&gt;          .android</span><br><span class="line">2019/03/25  20:15    &lt;DIR&gt;          .AndroidStudio3.0</span><br><span class="line">2019/04/21  18:27    &lt;DIR&gt;          .atom</span><br><span class="line">2019/07/27  09:03             9,616 .bash_history</span><br></pre></td></tr></table></figure>
+
 <p>会显示一堆类似这种的东西。这是什么？</p>
 <p>去你的资源管理器里，把顶上的地址栏的内容改成<code>C:\Users\xxx</code>（替换为你的命令行显示的目录），回车——这个目录下是不是也显示了一样的一堆乱七八糟的文件？</p>
 <p>你大概已经发现了，<code>dir</code>就是命令行语言里“列出目录下的所有文件和文件夹”的意思啦！那些有<code>&lt;dir&gt;</code>的行就是文件夹，没有的行就是文件。</p>
@@ -341,22 +465,28 @@
 <p>如果你的命令行前面的那个<code>C:\Users\lm&gt;</code>成功地变过去了，恭喜！你已经把命令行目录切换过去了，赶快输入一行<code>dir</code>看看吧！如果没有变化——没关系，一定是你的新目录和原来命令行的目录所在的硬盘，也就是开头的那个大写字母，不一样！</p>
 <p>比方说你的新目录（就是你的代码存放的目录）在<code>D:\workspace\cpp</code>，也就是你把你的代码存放在了D盘的workspace文件夹下的cpp文件夹里，而你原来的目录在C盘，但凡涉及到这种切换硬盘的操作，<code>cd</code>之后是不能立即生效的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lm&gt;cd D:\workspace\cpp</span><br><span class="line"></span><br><span class="line">C:\Users\lm&gt;</span><br></pre></td></tr></table></figure>
+
 <p> 目录仍然在<code>C:\Users\lm</code>。</p>
 <p>不过，你只要再写一行：<code>D:</code>（如果新目录在D盘），然后回车：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\lm&gt;cd D:\workspace\cpp</span><br><span class="line"></span><br><span class="line">C:\Users\lm&gt;D:</span><br><span class="line"></span><br><span class="line">D:\workspace\cpp&gt;</span><br></pre></td></tr></table></figure>
+
 <p>看！是不是切换过去了？赶快输入一行<code>dir</code>看看吧！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">D:\workspace\cpp&gt;dir</span><br><span class="line"> 驱动器 D 中的卷是 S1D</span><br><span class="line"> 卷的序列号是 7AB8-80B5</span><br><span class="line"></span><br><span class="line"> D:\workspace\cpp 的目录</span><br><span class="line"></span><br><span class="line">2019/08/29  15:45    &lt;DIR&gt;          .</span><br><span class="line">2019/08/29  15:45    &lt;DIR&gt;          ..</span><br><span class="line">2019/08/28  19:54                98 Untitled1.cpp</span><br><span class="line">2019/08/29  11:00         1,920,968 Untitled1.exe</span><br><span class="line">               2 个文件      1,921,066 字节</span><br><span class="line">               2 个目录 31,765,028,864 可用字节</span><br></pre></td></tr></table></figure>
+
 <p>看！是不是显示出了<code>Untitled1.cpp</code>和<code>Untitled1.exe</code>（这是我懒得改名字了）这两个文件？</p>
 <p>不过，不知道你有没有发现，<code>dir</code>显示的目录，总是在上面多了两个？一个叫<code>.</code>，一个叫<code>..</code>。这个实际上跟下面介绍的“相对路径”有关。</p>
 <h5 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h5><p>实际上，<code>cd</code>命令还有更方便的用法：使用相对路径。之前我们说的所有“目录”或者“路径”，都是“绝对路径”——都是从<code>C:\</code>或者<code>D:\</code>开始的路径。相对路径，顾名思义，就是从我所在的位置，去往新目录的这条路径。比方说，你在<code>D:\workspace\cpp</code>，想去<code>D:\workspace\notes</code>文件夹记记笔记，如果你在资源管理器里，大概会做“向上一级，然后双击notes文件夹”这种事情吧？在目录里，原地不动就是<code>.</code>，向上一级就是<code>..</code>，而双击notes文件夹就是写一个<code>notes</code>，然后只要把所有的操作按顺序连起来，中间加上分隔符<code>\</code>（MacOS是<code>/</code>）就可以啦！写成相对路径，就是<code>..\notes</code>（当然，写<code>.\..\notes\.\</code>也是一样的）。这个路径也可以用<code>cd</code>命令来切换目录哦！比方说，只要一句<code>cd ..\notes</code>（别忘了在<code>cd</code>和目录之间加空格哦），就能把我从<code>D:\workspace\cpp</code>传送到<code>D:\workspace\notes</code>了！</p>
 <p>快试试吧！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace\cpp&gt;cd ..\notes</span><br><span class="line"></span><br><span class="line">D:\workspace\notes&gt;</span><br></pre></td></tr></table></figure>
+
 <h5 id="好啦！执行你的-exe-文件"><a href="#好啦！执行你的-exe-文件" class="headerlink" title="好啦！执行你的 .exe 文件"></a>好啦！执行你的 .exe 文件</h5><p>想必现在你已经把命令行的目录切换到你的 .cpp 文件啦！下一步是执行文件。执行文件的命令就是文件本身！比方说你要执行<code>Untitled1.exe</code>，只要写一行<code>Untitled1.exe</code>然后回车就可以啦！</p>
 <p>（其实另一种方法是<code>.\文件名</code>（注意！不要在<code>.\</code>和文件名之间敲空格，如<code>.\Untitled1.exe</code>）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace\cpp&gt;Untitled1.exe</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
 <p>看！还记得之前讲的“编译”过程嘛？我们直接把翻译好的“火星文”（机器语言）扔给电脑让他执行，电脑也可以完美地完成“往屏幕上写几个大字”的任务！而且，因为这个命令行是你一直在用的，不是双击 .exe 文件临时打开的，所以电脑完成任务之后也不会立刻关闭命令行，你的<code>Hello World!</code>就留下来啦！</p>
 <p>你甚至可以用相对路径或者绝对路径来运行一个应用：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace&gt;D:\workspace\cpp\Untitled1.exe</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
 <h4 id="用命令行完成编译！（可以跳过）"><a href="#用命令行完成编译！（可以跳过）" class="headerlink" title="用命令行完成编译！（可以跳过）"></a>用命令行完成编译！（可以跳过）</h4><p>刚才我已经埋了个伏笔——我介绍了如何手动做写代码的第一步和第三步，但是第二步：编译呢？</p>
 <blockquote>
 <p>这其实对初学者并不是很有用啦——不过很快就能讲完！</p>
@@ -364,27 +494,35 @@
 <ol>
 <li><p>打开你刚才用的Dev C++，然后再按F11编译一次。下面的框里应该还是出现一堆文字，旁边还有个滚动条，等他编译完了，可以看到框里边大概内容是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Compiling single file...</span><br><span class="line">--------</span><br><span class="line">- Filename: D:\workspace\cpp\Untitled1.cpp</span><br><span class="line">- Compiler Name: TDM-GCC 4.9.2 64-bit Release</span><br><span class="line"></span><br><span class="line">Processing C++ source file...</span><br><span class="line">--------</span><br><span class="line">- C++ Compiler: D:\prog\dev c++\Dev-Cpp\MinGW64\bin\g++.exe</span><br><span class="line">- Command: g++.exe &quot;D:\workspace\cpp\Untitled1.cpp&quot; -o &quot;D:\workspace\cpp\Untitled1.exe&quot; -std=c++11 -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include\c++&quot; -L&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib&quot; -L&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\x86_64-w64-mingw32\lib&quot; -static-libgcc</span><br><span class="line"></span><br><span class="line">Compilation results...</span><br><span class="line">--------</span><br><span class="line">- Errors: 0</span><br><span class="line">- Warnings: 0</span><br><span class="line">- Output Filename: D:\workspace\cpp\Untitled1.exe</span><br><span class="line">- Output Size: 1.83197784423828 MiB</span><br><span class="line">- Compilation Time: 0.83s</span><br></pre></td></tr></table></figure>
+
 <p>找到最中间，以Command开头的那行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- Command: g++.exe &quot;D:\workspace\cpp\Untitled1.cpp&quot; -o &quot;D:\workspace\cpp\Untitled1.exe&quot; -std=c++11 -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include\c++&quot; -L&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib&quot; -L&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\x86_64-w64-mingw32\lib&quot; -static-libgcc</span><br></pre></td></tr></table></figure>
+
 <p>这句话实际上就是编译时，Dev C++转身打开了个命令行，往里输入的话！你只要效仿就可以在命令行完成编译了！</p>
 </li>
 <li><p>当然了，上面两步已经编译出来了一个 .exe 文件。为了验证结果，你可以找到你的代码所在位置，把它旁边的同名 .exe 文件删掉。然后从命令行再整一个出来！</p>
 </li>
 <li><p>把Command: 后面，从<code>g++</code>开始，整个复制出来，直接贴到命令行。（任何路径下的命令行都可以！）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace\cpp&gt;g++.exe &quot;D:\workspace\cpp\Untitled1.cpp&quot; -o &quot;D:\workspace\cpp\Untitled1.exe&quot; -std=c++11 -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\x86_64-w64-mingw32\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include&quot; -I&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib\gcc\x86_64-w64-mingw32\4.9.2\include\c++&quot; -L&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\lib&quot; -L&quot;D:\prog\dev c++\Dev-Cpp\MinGW64\x86_64-w64-mingw32\lib&quot; -static-libgcc</span><br><span class="line"></span><br><span class="line">D:\workspace\cpp&gt;</span><br></pre></td></tr></table></figure>
+
 <p>好像没什么反应啊…不过没关系！<code>g++</code>很高冷的，没有反应就是成功！有反应了一般才是你哪里写错了。</p>
 <p>下面去看看那个文件夹，或者直接<code>dir</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace\cpp&gt;dir</span><br><span class="line"> 驱动器 D 中的卷是 S1D</span><br><span class="line"> 卷的序列号是 7AB8-80B5</span><br><span class="line"></span><br><span class="line"> D:\workspace\cpp 的目录</span><br><span class="line"></span><br><span class="line">2019/08/29  16:25    &lt;DIR&gt;          .</span><br><span class="line">2019/08/29  16:25    &lt;DIR&gt;          ..</span><br><span class="line">2019/08/28  19:54                98 Untitled1.cpp</span><br><span class="line">2019/08/29  16:25         1,920,968 Untitled1.exe</span><br><span class="line">               2 个文件      1,921,066 字节</span><br><span class="line">               2 个目录 31,763,034,112 可用字节</span><br><span class="line"></span><br><span class="line">D:\workspace\cpp&gt;</span><br></pre></td></tr></table></figure>
+
 <p>看！<code>Untitled1.exe</code>它又回来了！执行一下？</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D:\workspace\cpp&gt;Untitled1.exe</span><br><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+
 <p>恭喜！你已经学会了如何用命令行编译！</p>
 <p>开玩笑啦，你总不能每次都复制那么大一堆话进去吧。实际上——你只要往命令行输入一小行就可以啦！</p>
 <p>先<code>cd</code>到你的代码文件的目录下，然后：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++.exe Untitled1.cpp -o Untitled1.exe</span><br></pre></td></tr></table></figure>
+
 <p>其实就是</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++.exe 代码文件的名字 -o 你给.exe文件取的名字</span><br></pre></td></tr></table></figure>
+
 <p>当然，你甚至可以不身处于代码文件的目录下——只要在“代码文件的名字”和“你给.exe文件取的名字”前面都加上相对或绝对路径就可以了。就像Dev C++干的：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++.exe &quot;D:\workspace\cpp\Untitled1.cpp&quot; -o &quot;D:\workspace\cpp\Untitled1.exe&quot;</span><br></pre></td></tr></table></figure>
+
 <p>当然加不加双引号都可以啦！不过四个部分<code>g++.exe</code>，<code>&quot;D:\workspace\cpp\Untitled1.cpp&quot;</code>，<code>-o</code>，</p>
 <p><code>&quot;D:\workspace\cpp\Untitled1.exe&quot;</code>之间的空格可不能省略哦！</p>
 </li>
@@ -415,7 +553,16 @@
 <p>顺便一提——Code::Blocks也是个不错的IDE，不过有时有一些Bug，对新手不太友好。</p>
 <h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>到此，“如何运行你的第一行C++程序”一节就算告一段落啦！写了这么大篇幅，不知道各位会不会嫌我啰嗦——不过这只是希望一个还没太学会利用搜索引擎的新手（萌新三连：啥玩意啊/咋回事啊/那咋整啊/大佬帮帮忙啊；大佬三连：百度啊！百度呀！百度哇！你tm不会百度吗？），把这些可能遇到的知识全盘托出，应该能带来更好的入门体验（而不是徐BOSS当年——打开自己的Mac，打开命令行——命令行！，劈里啪啦打几行命令演示一通，然后说自学）。</p>
 <p>再次重申——如有遗漏的，各位看官被迫离开本文去百度/Google的，一定要在下面给我留句话哦！我会不断完善自己的教程的。那么，下课啦！似乎拖了会堂…下节课见！</p>
+
     </div>
+
+    
+    
+    
+        
+      
+        
+
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
@@ -428,30 +575,62 @@
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
+
+      
+
       <footer class="post-footer">
+          
+            
+          
           <div class="post-tags">
+            
               <a href="/tags/C/" rel="tag"># C++</a>
+            
           </div>
+        
+
+        
+
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+              
                 <a href="/2019-08-25-multiple_git_accounts/" rel="next" title="如何管理同一电脑上的多个git账号 - 步骤&解释">
                   <i class="fa fa-chevron-left"></i> 如何管理同一电脑上的多个git账号 - 步骤&解释
                 </a>
+              
             </div>
+
             <span class="post-nav-divider"></span>
+
             <div class="post-nav-prev post-nav-item">
+              
                 <a href="/2019-08-30-pyinstaller/" rel="prev" title="windows下python转exe">
                   windows下python转exe <i class="fa fa-chevron-right"></i>
                 </a>
+              
             </div>
           </div>
+        
       </footer>
+    
   </div>
+  
+  
+  
   </article>
+
   </div>
+
+
           </div>
+          
+    
     <div class="comments" id="comments"></div>
+  
+
         </div>
+          
+  
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -459,8 +638,15 @@
       <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
+
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           文章目录
@@ -469,11 +655,14 @@
           站点概览
         </li>
       </ul>
+
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#教材和教学计划"><span class="nav-number">1.</span> <span class="nav-text">教材和教学计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是语言？什么是程序？（懂得同学可跳过）"><span class="nav-number">2.</span> <span class="nav-text">什么是语言？什么是程序？（懂得同学可跳过）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何运行你的第一行C-程序"><span class="nav-number">3.</span> <span class="nav-text">如何运行你的第一行C++程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#写一段程序的简单过程-（之一）"><span class="nav-number">3.1.</span> <span class="nav-text">写一段程序的简单过程 （之一）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写一段程序的过程（之一）"><span class="nav-number">3.2.</span> <span class="nav-text">写一段程序的过程（之一）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写一段程序的实际过程（不感兴趣的可以跳过）"><span class="nav-number">3.3.</span> <span class="nav-text">写一段程序的实际过程（不感兴趣的可以跳过）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写一段程序的“过程”和“实际过程”之间的关系"><span class="nav-number">3.4.</span> <span class="nav-text">写一段程序的“过程”和“实际过程”之间的关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行-exe-文件"><span class="nav-number">3.5.</span> <span class="nav-text">运行 .exe 文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行的基本介绍（懂的同学可以跳过）"><span class="nav-number">3.6.</span> <span class="nav-text">命令行的基本介绍（懂的同学可以跳过）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#启动命令行"><span class="nav-number">3.6.1.</span> <span class="nav-text">启动命令行</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#命令行的基本用法"><span class="nav-number">3.6.2.</span> <span class="nav-text">命令行的基本用法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#目录，和两个相关的命令"><span class="nav-number">3.6.3.</span> <span class="nav-text">目录，和两个相关的命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#dir命令"><span class="nav-number">3.6.4.</span> <span class="nav-text">dir命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cd命令"><span class="nav-number">3.6.5.</span> <span class="nav-text">cd命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#相对路径"><span class="nav-number">3.6.6.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#好啦！执行你的-exe-文件"><span class="nav-number">3.6.7.</span> <span class="nav-text">好啦！执行你的 .exe 文件</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用命令行完成编译！（可以跳过）"><span class="nav-number">3.7.</span> <span class="nav-text">用命令行完成编译！（可以跳过）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逃离Dev-C-！逃离IDE！"><span class="nav-number">3.8.</span> <span class="nav-text">逃离Dev C++！逃离IDE！</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+        
       </div>
       <!--/noindex-->
+
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">直角世界</p>
@@ -481,30 +670,68 @@
 </div>
   <nav class="site-state motion-element">
       <div class="site-state-item site-state-posts">
+        
           <a href="/archives/">
+        
           <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+    
+      
+      
       <div class="site-state-item site-state-categories">
+        
+          
             <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
         <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
+    
+      
+      
       <div class="site-state-item site-state-tags">
+        
+          
             <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
+    
   </nav>
+
+
+
       </div>
+
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
+
+
       </div>
     </main>
+
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
@@ -516,15 +743,38 @@
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
       </div>
     </footer>
   </div>
+
+  
+
+
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -534,6 +784,34 @@
       s.parentNode.insertBefore(bp, s);
     })();
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
 <script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -557,5 +835,6 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   });
 }, window.Valine);
 </script>
+
 </body>
 </html>

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+
+
+
+
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -11,8 +16,13 @@
   <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
   <meta name="google-site-verification" content="3HLS2iyyOnkg_AMP606wyvq85B2TZlEIWjQWTf6HV2I">
   <meta name="baidu-site-verification" content="pMovHZW29I,mCbwt8v2E2">
+
 <link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
 <script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
@@ -46,6 +56,7 @@
     sidebarPadding: 40
   };
 </script>
+
   <meta name="description" content="刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~ 不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
@@ -54,11 +65,13 @@
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
 <meta property="og:description" content="刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~ 不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-30T02:05:27.017Z">
+<meta property="og:updated_time" content="2019-08-30T04:20:43.422Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows下python转exe">
 <meta name="twitter:description" content="刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~ 不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程">
   <link rel="canonical" href="https://lhwemn.coding-pages.com/2019-08-30-pyinstaller/">
+
+
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
@@ -69,8 +82,18 @@
     isArchive: false
   };
 </script>
+
   <title>windows下python转exe | THU CST 的零基础代码学习</title>
   <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
   <noscript>
   <style>
   .use-motion .brand,
@@ -82,23 +105,29 @@
   .use-motion .post-header,
   .use-motion .post-body,
   .use-motion .collection-header { opacity: initial; }
+
   .use-motion .logo,
   .use-motion .site-title,
   .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
+
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
+
 </head>
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
   <div class="container use-motion">
     <div class="headband"></div>
+
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-meta">
+
     <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
@@ -107,7 +136,9 @@
       </a>
     </div>
         <h1 class="site-subtitle" itemprop="description">THU课程同步笔记</h1>
+      
   </div>
+
   <div class="site-nav-toggle">
     <button aria-label="切换导航栏">
       <span class="btn-bar"></span>
@@ -116,62 +147,128 @@
     </button>
   </div>
 </div>
+
+
 <nav class="site-nav">
+  
   <ul id="menu" class="menu">
+      
+      
+      
+        
         <li class="menu-item menu-item-home">
+      
+    
+
     <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
   </li>
+      
+      
+      
+        
         <li class="menu-item menu-item-tags">
+      
+    
+
     <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
   </li>
+      
+      
+      
+        
         <li class="menu-item menu-item-categories">
+      
+    
+
     <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
   </li>
+      
+      
+      
+        
         <li class="menu-item menu-item-archives">
+      
+    
+
     <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
   </li>
   </ul>
+
+    
+
 </nav>
 </div>
     </header>
+
+    
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+
+
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
+            
+
   <div id="posts" class="posts-expand">
       <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
   <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://lhwemn.coding-pages.com/2019-08-30-pyinstaller/">
+
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="直角世界">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
+
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="THU CST 的零基础代码学习">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">windows下python转exe
+
+          
         </h2>
+
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+
+              
+                
+              
+
               <time title="创建时间：2019-08-30 09:51:38" itemprop="dateCreated datePublished" datetime="2019-08-30T09:51:38+08:00">2019-08-30</time>
             </span>
+          
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
+              
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂记/" itemprop="url" rel="index"><span itemprop="name">杂记</span></a></span>
+
+                
+                
+              
             </span>
+          
+
+          
             <span id="/2019-08-30-pyinstaller/" class="post-meta-item leancloud_visitors" data-flag-title="windows下python转exe" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
@@ -179,19 +276,35 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+          
+  
   <span class="post-meta-item">
+    
       <span class="post-meta-item-icon">
         <i class="fa fa-comment-o"></i>
       </span>
+        
+      
       <span class="post-meta-item-text">Valine：</span>
+    
     <a title="valine" href="/2019-08-30-pyinstaller/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08-30-pyinstaller/" itemprop="commentCount"></span></a>
   </span>
+  
+  
+
         </div>
       </header>
+
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
+
+      
         <p>刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~</p>
 <p>不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程~</p>
 <a id="more"></a>
+
 <ol>
 <li><p>安装pyinstaller： pip install pyinstaller</p>
 </li>
@@ -228,7 +341,16 @@
 </ol>
 </li>
 </ol>
+
     </div>
+
+    
+    
+    
+        
+      
+        
+
 <div>
 <ul class="post-copyright">
   <li class="post-copyright-author">
@@ -241,27 +363,58 @@
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
 </ul>
 </div>
+
+      
+
       <footer class="post-footer">
+          
+            
+          
           <div class="post-tags">
+            
               <a href="/tags/python/" rel="tag"># python</a>
+            
           </div>
+        
+
+        
+
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+              
                 <a href="/2019-08-29-basics-1-overview/" rel="next" title="程设基础 第一周：C++第一行代码">
                   <i class="fa fa-chevron-left"></i> 程设基础 第一周：C++第一行代码
                 </a>
+              
             </div>
+
             <span class="post-nav-divider"></span>
+
             <div class="post-nav-prev post-nav-item">
+              
             </div>
           </div>
+        
       </footer>
+    
   </div>
+  
+  
+  
   </article>
+
   </div>
+
+
           </div>
+          
+    
     <div class="comments" id="comments"></div>
+  
+
         </div>
+          
+  
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
       <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -269,8 +422,15 @@
       <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
+
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           文章目录
@@ -279,10 +439,12 @@
           站点概览
         </li>
       </ul>
+
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
       </div>
       <!--/noindex-->
+
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">直角世界</p>
@@ -290,30 +452,68 @@
 </div>
   <nav class="site-state motion-element">
       <div class="site-state-item site-state-posts">
+        
           <a href="/archives/">
+        
           <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+    
+      
+      
       <div class="site-state-item site-state-categories">
+        
+          
             <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
         <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
+    
+      
+      
       <div class="site-state-item site-state-tags">
+        
+          
             <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
         <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
+    
   </nav>
+
+
+
       </div>
+
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
+
+
       </div>
     </main>
+
     <footer id="footer" class="footer">
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
@@ -325,15 +525,38 @@
   <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
   <span class="post-meta-divider">|</span>
   <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
       </div>
     </footer>
   </div>
+
+  
+
+
   <script src="/lib/anime.min.js?v=3.1.0"></script>
   <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
   <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
 <script src="/js/schemes/muse.js?v=7.3.0"></script>
 <script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
   <script>
     (function(){
       var bp = document.createElement('script');
@@ -343,6 +566,34 @@
       s.parentNode.insertBefore(bp, s);
     })();
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
 <script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -366,5 +617,6 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   });
 }, window.Valine);
 </script>
+
 </body>
 </html>
