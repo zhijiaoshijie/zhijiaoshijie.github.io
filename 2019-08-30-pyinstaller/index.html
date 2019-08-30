@@ -57,18 +57,19 @@
   };
 </script>
 
-  <meta name="description" content="欢迎！ 你也是初入代码的新人吗？或是站在tensorflow，Android，javascript…面前，望洋兴叹？抑或是，想学些新技能，但是“哪来的那么多时间”？ 没关系，跟随我的脚步吧。三年前踏进清华贵系（计算机系）时，我也是一样的彷徨无助。这三年不只是教会了我各项技能，更重要的是学习能力。暑假小学期里，我们速成了Qt，java，汇编和Android并做了大作业，每个项目只用了1~2周时间。“">
+  <meta name="description" content="刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~ 不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="序">
-<meta property="og:url" content="https://lhwemn.coding-pages.com/2019-08-25-intro/index.html">
+<meta property="og:title" content="windows下python转exe">
+<meta property="og:url" content="https://lhwemn.coding-pages.com/2019-08-30-pyinstaller/index.html">
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
-<meta property="og:description" content="欢迎！ 你也是初入代码的新人吗？或是站在tensorflow，Android，javascript…面前，望洋兴叹？抑或是，想学些新技能，但是“哪来的那么多时间”？ 没关系，跟随我的脚步吧。三年前踏进清华贵系（计算机系）时，我也是一样的彷徨无助。这三年不只是教会了我各项技能，更重要的是学习能力。暑假小学期里，我们速成了Qt，java，汇编和Android并做了大作业，每个项目只用了1~2周时间。“">
+<meta property="og:description" content="刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~ 不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-25T10:50:46.591Z">
+<meta property="og:updated_time" content="2019-08-30T02:05:27.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="序">
-<meta name="twitter:description" content="欢迎！ 你也是初入代码的新人吗？或是站在tensorflow，Android，javascript…面前，望洋兴叹？抑或是，想学些新技能，但是“哪来的那么多时间”？ 没关系，跟随我的脚步吧。三年前踏进清华贵系（计算机系）时，我也是一样的彷徨无助。这三年不只是教会了我各项技能，更重要的是学习能力。暑假小学期里，我们速成了Qt，java，汇编和Android并做了大作业，每个项目只用了1~2周时间。“">
-  <link rel="canonical" href="https://lhwemn.coding-pages.com/2019-08-25-intro/">
+<meta name="twitter:title" content="windows下python转exe">
+<meta name="twitter:description" content="刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~ 不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程">
+  <link rel="canonical" href="https://lhwemn.coding-pages.com/2019-08-30-pyinstaller/">
 
 
 <script id="page-configurations">
@@ -82,7 +83,7 @@
   };
 </script>
 
-  <title>序 | THU CST 的零基础代码学习</title>
+  <title>windows下python转exe | THU CST 的零基础代码学习</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -222,7 +223,7 @@
   
   
   <div class="post-block post">
-    <link itemprop="mainEntityOfPage" href="https://lhwemn.coding-pages.com/2019-08-25-intro/">
+    <link itemprop="mainEntityOfPage" href="https://lhwemn.coding-pages.com/2019-08-30-pyinstaller/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="直角世界">
@@ -234,7 +235,7 @@
       <meta itemprop="name" content="THU CST 的零基础代码学习">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">序
+        <h2 class="post-title" itemprop="name headline">windows下python转exe
 
           
         </h2>
@@ -250,12 +251,25 @@
                 
               
 
-              <time title="创建时间：2019-08-25 12:17:02" itemprop="dateCreated datePublished" datetime="2019-08-25T12:17:02+08:00">2019-08-25</time>
+              <time title="创建时间：2019-08-30 09:51:38" itemprop="dateCreated datePublished" datetime="2019-08-30T09:51:38+08:00">2019-08-30</time>
+            </span>
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/杂记/" itemprop="url" rel="index"><span itemprop="name">杂记</span></a></span>
+
+                
+                
+              
             </span>
           
 
           
-            <span id="/2019-08-25-intro/" class="post-meta-item leancloud_visitors" data-flag-title="序" title="阅读次数">
+            <span id="/2019-08-30-pyinstaller/" class="post-meta-item leancloud_visitors" data-flag-title="windows下python转exe" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -273,7 +287,7 @@
       
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019-08-25-intro/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08-25-intro/" itemprop="commentCount"></span></a>
+    <a title="valine" href="/2019-08-30-pyinstaller/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/2019-08-30-pyinstaller/" itemprop="commentCount"></span></a>
   </span>
   
   
@@ -287,11 +301,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>欢迎！</p>
-<p>你也是初入代码的新人吗？或是站在<code>tensorflow</code>，<code>Android</code>，<code>javascript</code>…面前，望洋兴叹？抑或是，想学些新技能，但是“哪来的那么多时间”？</p>
-<p>没关系，跟随我的脚步吧。三年前踏进清华贵系（计算机系）时，我也是一样的彷徨无助。这三年不只是教会了我各项技能，更重要的是<strong>学习能力</strong>。暑假小学期里，我们速成了<code>Qt</code>，<code>java</code>，汇编和<code>Android</code>并做了大作业，每个项目只用了1~2周时间。“精通”是不能求快的，但是<strong>“会用”是可以速成的</strong>。我们可以，你也可以。</p>
-<p>我会一点点整理三年来的每一堂课，和每一门语言的<strong>零基础</strong>入门经历。从最基本的概念（命令行是什么？），配置环境（为什么装完了报错E:xxx？)，到第一行代码，我都会以图文详细介绍。如果你遇到了任何bug或者“not work”的地方，<strong>一定要</strong>在下面给我留言，我希望能知道所有讲的不清楚，或者可能出错的地方，让每个新人都能无障碍地入门。</p>
-<p>那么，找个（后排的）位置坐好，开始上课吧！</p>
+        <p>刚才测试了下可以，python版本是3.7.0，不过有的人说不行，如果你不行把错误信息告诉我咱们再交流~</p>
+<p>不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程~</p>
+<a id="more"></a>
+
+<ol>
+<li><p>安装pyinstaller： pip install pyinstaller</p>
+</li>
+<li><p>如果报错，最底下往上数几行有个error: Microsoft Visual C++ 14.0 is required：</p>
+<p>输入pip install –upgrade setuptools，再重新做第一步就行了</p>
+</li>
+<li><p>pyinstaller –onefile 1.py（改成你的py文件名）</p>
+<p>–onefile就是打包成1个exe的意思，不写的话会有一个文件夹的dll库</p>
+<p>如果你看到</p>
+<p>1769 INFO: Appending archive to EXE D:\prog10\Desktop\dist\1.exe</p>
+<p>1893 INFO: Building EXE from EXE-00.toc completed successfully.</p>
+<p>这种就说明成功了。一般在你的目录<strong>的dist文件夹里</strong>有个exe。</p>
+</li>
+<li><p>如果没成功的话，在同目录下dist文件夹旁边应该还有个build文件夹，里边有个文件夹1（就是你的py文件名），里边有个warn-1.txt，里边写了很多missing module named …，一个个试着用pip install装一下，比如</p>
+<p>missing module named resource - imported by posix (top-level), D:\prog10\Desktop\1.py (top-level)</p>
+<p>就写pip install resource</p>
+<p>如果装不上<strong>没关系</strong>，因为有的库就是不支持windows的，比如有个</p>
+<p>missing module named posix - imported by os (conditional, optional), D:\prog10\Desktop\1.py (top-level)</p>
+<p>这个本身就是跟posix系统对接的库，windows肯定没有了，不过pyinstaller并不清楚（它是个跨平台的能给win，linux，mac打包，并不是专门为windows设计的），所以装不上也没关系，装下一个就是了。</p>
+<p>注意不要把所有库一股脑输到pip install 后面，比如我这样：</p>
+<p>pip install resource posix _posixsubprocess ‘org.python’ clr IronPythonConsole StringIO win32evtlogutil win32evtlog System sets startup console _frozen_importlib _frozen_importlib_external _winreg _scproxy ja va ‘java.lang’ vms_lib termios grp org pwd</p>
+<p>因为pip有个库安装失败了剩下的就不装了…</p>
+<p>顺便一提，如果觉得装那么多不舒服的，可以开个virtualenv隔离一下，这样里边的库就不会影响外边了</p>
+<ol>
+<li><p>pip install virtualenv</p>
+</li>
+<li><p>cd到一个目录然后virtualenv –no-site-packages venv（或者把venv换成你自己起个名字）</p>
+<p>–no-site-packages是创建崭新虚拟机，不带任何库进入新的虚拟机，如果不想这样可以去掉这个参数。</p>
+</li>
+<li><p>source venv/bin/activate启动虚拟机，之后你的python就只能用里边的库，pip装的库也只在里边。</p>
+</li>
+<li><p>deactivate离开虚拟机</p>
+</li>
+</ol>
+</li>
+</ol>
 
     </div>
 
@@ -308,7 +357,7 @@
     <strong>本文作者： </strong>直角世界</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lhwemn.coding-pages.com/2019-08-25-intro/" title="序">https://lhwemn.coding-pages.com/2019-08-25-intro/</a>
+    <a href="https://lhwemn.coding-pages.com/2019-08-30-pyinstaller/" title="windows下python转exe">https://lhwemn.coding-pages.com/2019-08-30-pyinstaller/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -318,21 +367,30 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/python/" rel="tag"># python</a>
+            
+          </div>
+        
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019-08-29-basics-1-overview/" rel="next" title="程设基础 第一周：C++第一行代码">
+                  <i class="fa fa-chevron-left"></i> 程设基础 第一周：C++第一行代码
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019-08-25-multiple_git_accounts/" rel="prev" title="如何管理同一电脑上的多个git账号 - 步骤&解释">
-                  如何管理同一电脑上的多个git账号 - 步骤&解释 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>
