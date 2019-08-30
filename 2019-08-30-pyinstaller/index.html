@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
 <meta property="og:description" content="不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程~">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-30T04:25:03.126Z">
+<meta property="og:updated_time" content="2019-08-30T04:25:51.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows下python转exe">
 <meta name="twitter:description" content="不知道你们有没有遇到过想把python转exe，又担心带了一大堆dll依赖库，给别的小朋友跑不了的经历？pyinstaller是可以打包成干净利落的一个exe的。当然网上有人说不支持python 3.5以上，不过我是python3.7也用的很正常，如果有遇到问题的欢迎给我留言，让我完善我的教程~">
@@ -323,9 +323,13 @@
 <p>如果装不上<strong>没关系</strong>，因为有的库就是不支持windows的，比如有个</p>
 <p>missing module named posix - imported by os (conditional, optional), D:\prog10\Desktop\1.py (top-level)</p>
 <p>这个本身就是跟posix系统对接的库，windows肯定没有了，不过pyinstaller并不清楚（它是个跨平台的能给win，linux，mac打包，并不是专门为windows设计的），所以装不上也没关系，装下一个就是了。</p>
-<p>注意不要把所有库一股脑输到pip install 后面，比如我这样：</p>
+<ul>
+<li><p>注意不要把所有库一股脑输到pip install 后面，比如我这样：</p>
 <p>pip install resource posix _posixsubprocess ‘org.python’ clr IronPythonConsole StringIO win32evtlogutil win32evtlog System sets startup console _frozen_importlib _frozen_importlib_external _winreg _scproxy ja va ‘java.lang’ vms_lib termios grp org pwd</p>
 <p>因为pip有个库安装失败了剩下的就不装了…</p>
+</li>
+</ul>
+<blockquote>
 <p>顺便一提，如果觉得装那么多不舒服的，可以开个virtualenv隔离一下，这样里边的库就不会影响外边了</p>
 <ol>
 <li><p>pip install virtualenv</p>
@@ -338,6 +342,7 @@
 <li><p>deactivate离开虚拟机</p>
 </li>
 </ol>
+</blockquote>
 </li>
 </ol>
 
