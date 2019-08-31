@@ -57,15 +57,18 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="https://lhwemn.coding-pages.com/tags/index.html">
+  <meta name="description" content=".container {     width: 100%;   }    .links {    list-style: none;  }   .link {    margin: 10px;    display: inline-block;  }   .card {    height: 72px;    width: 300px;    box-shadow: 0 3px 1px -">
+<meta property="og:type" content="website">
+<meta property="og:title" content="friends">
+<meta property="og:url" content="https://lhwemn.coding-pages.com/links/index.html">
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
+<meta property="og:description" content=".container {     width: 100%;   }    .links {    list-style: none;  }   .link {    margin: 10px;    display: inline-block;  }   .card {    height: 72px;    width: 300px;    box-shadow: 0 3px 1px -">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-25T10:29:24.755Z">
+<meta property="og:updated_time" content="2019-01-13T00:09:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
-  <link rel="canonical" href="https://lhwemn.coding-pages.com/tags/">
+<meta name="twitter:title" content="friends">
+<meta name="twitter:description" content=".container {     width: 100%;   }    .links {    list-style: none;  }   .link {    margin: 10px;    display: inline-block;  }   .card {    height: 72px;    width: 300px;    box-shadow: 0 3px 1px -">
+  <link rel="canonical" href="https://lhwemn.coding-pages.com/links/">
 
 
 <script id="page-configurations">
@@ -79,7 +82,7 @@
   };
 </script>
 
-  <title>标签 | THU CST 的零基础代码学习</title>
+  <title>friends | THU CST 的零基础代码学习</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -252,7 +255,7 @@
     <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">标签
+<h2 class="post-title" itemprop="name headline">friends
 
 </h2>
 
@@ -268,30 +271,92 @@
       
       <div class="post-body">
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-              
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 3 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              
-                <a href="/tags/C/" style="font-size: 12px; color: #ccc">C++</a> <a href="/tags/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tags/python/" style="font-size: 12px; color: #ccc">python</a>
-              
-            </div>
-          </div>
+          <hr>
+<style>
+  .container {
+    width: 100%;
+  }
+
+<p>  .links {<br>    list-style: none;<br>  }</p>
+<p>  .link {<br>    margin: 10px;<br>    display: inline-block;<br>  }</p>
+<p>  .card {<br>    height: 72px;<br>    width: 300px;<br>    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);<br>    transition: box-shadow .25s cubic-bezier(.4,0,.2,1);<br>  }</p>
+<p>  .card:hover {<br>    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2),0 8px 10px 1px rgba(0,0,0,.14),0 3px 14px 2px rgba(0,0,0,.12);<br>  }</p>
+<p>  .avatar {<br>    float: left;<br>    height: 72px;<br>    width: 72px;<br>  }</p>
+<p>  img {<br>    height: 100%;<br>    width: 100%;<br>  }</p>
+<p>  .titles {<br>    overflow: hidden;<br>    height: 72px;<br>    width: 227px;<br>    margin-left: 72px;<br>  }</p>
+<p>  .title{<br>    text-align: center;<br>    height: 20px;<br>    width: 100%;<br>    margin: 0;<br>    line-height: 20px;<br>    margin-top: 14px;<br>  }</p>
+<p>  .subtitle {<br>    text-align: center;<br>    height: 20px;<br>    width: 100%;<br>    margin: 0;<br>    line-height: 20px;<br>  }</p>
+<p>  small {<br>    width: 100%;<br>  }<br></style><p></p>
+<div div="container">
+  <ul class="links" id="links"></ul>
+</div>
+
+<script>
+var xhr = new XMLHttpRequest();
+var path = 'index/links.xml';
+
+xhr.open('GET', path, true);
+
+xhr.onload = function (e) {
+  if (xhr.readyState === 4) {
+    if (xhr.status === 200) {
+      // console.log(xhr.responseText);
+      var parser = new DOMParser();
+      var xmlDoc = parser.parseFromString(xhr.responseText, 'text/xml');
+      // document.write(xmlDoc.getElementsByTagName('link')[0].textContent);
+      var ul = document.getElementById('links');
+
+      for (let i = 0; i < xmlDoc.getElementsByTagName('link').length; i++) {
+        var li = document.createElement('li');
+        // li.setAttribute('class', 'link');
+        li.className = 'link';
+        var a = document.createElement('a');
+        a.href = xmlDoc.getElementsByTagName('url')[i].innerHTML;
+        a.target = '_blank';
+        a.title = xmlDoc.getElementsByTagName('title')[i].innerHTML;
+        var card = document.createElement('div');
+        card.className = 'card';
+        var avatar = document.createElement('div');
+        avatar.className = 'avatar';
+        var image = document.createElement('img');
+        image.src = 'index/' + xmlDoc.getElementsByTagName('avatar')[i].innerHTML;
+        var titles = document.createElement('div');
+        titles.className = 'titles';
+        var title = document.createElement('p');
+        title.className = 'title';
+        title.innerText = xmlDoc.getElementsByTagName('title')[i].innerHTML;
+        var subtitle = document.createElement('p');
+        subtitle.className = 'subtitle';
+        var small = document.createElement('small');
+        small.innerText = xmlDoc.getElementsByTagName('subtitle')[i].innerHTML;
+
+        subtitle.appendChild(small);
+        titles.appendChild(title);
+        titles.appendChild(subtitle);
+
+        avatar.appendChild(image);
+
+        card.appendChild(avatar);
+        card.appendChild(titles);
+
+        a.appendChild(card);
+
+        li.appendChild(a);
+        ul.appendChild(li);
+      }
+    } else {
+      // console.error(xhr.statusText);
+    }
+  }
+};
+
+xhr.onerror = function (e) {
+  console.error(xhr.statusText);
+};
+
+xhr.send(null);
+</script>
+
         
       </div>
       
@@ -308,6 +373,9 @@
 
           </div>
           
+    
+    <div class="comments" id="comments"></div>
+  
 
         </div>
           

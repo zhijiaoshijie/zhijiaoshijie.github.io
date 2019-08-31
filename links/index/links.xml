@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<links>
+  <link>
+    <title>Google</title>
+    <subtitle>Don't be evil</subtitle>
+    <avatar>avatar1.jpg</avatar>
+    <url>https://www.google.com</url>
+  </link>
+  <link>
+    <title>GitHub</title>
+    <subtitle>Built for developers</subtitle>
+    <avatar>avatar2.jpg</avatar>
+    <url>https://github.com</url>
+  </link>
+</links>
