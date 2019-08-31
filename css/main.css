@@ -1680,7 +1680,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #79be3e;
+  background: #0fff0f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1730,7 +1730,6 @@ article:last-child .post-eof {
   padding: 0;
 }
 .links-of-blogroll-item {
-  display: inline-block;
   padding: 2px 10px;
 }
 .links-of-blogroll-item a,
