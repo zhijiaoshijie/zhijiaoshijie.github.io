@@ -60,14 +60,14 @@
   <meta name="description" content="欢迎！ 不知道各位是否接触过OJ呢？或许，一段时间后你们就开始对“IO优化”蠢蠢欲动了吧。输在起跑线的感觉总是不怎么样。 先上结论：    方法 cin cin + setvbuf scanf cin + 关闭同步 cin + 关闭同步 + setvbuf scanf + setvbuf    时间（ms) 10800 10240 388 372 340 340      方法 手动输入 手动输入">
 <meta name="keywords" content="c++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cpp-io-speedup">
+<meta property="og:title" content="c++的IO优化">
 <meta property="og:url" content="https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/index.html">
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
 <meta property="og:description" content="欢迎！ 不知道各位是否接触过OJ呢？或许，一段时间后你们就开始对“IO优化”蠢蠢欲动了吧。输在起跑线的感觉总是不怎么样。 先上结论：    方法 cin cin + setvbuf scanf cin + 关闭同步 cin + 关闭同步 + setvbuf scanf + setvbuf    时间（ms) 10800 10240 388 372 340 340      方法 手动输入 手动输入">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-31T13:26:26.972Z">
+<meta property="og:updated_time" content="2019-08-31T15:05:20.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cpp-io-speedup">
+<meta name="twitter:title" content="c++的IO优化">
 <meta name="twitter:description" content="欢迎！ 不知道各位是否接触过OJ呢？或许，一段时间后你们就开始对“IO优化”蠢蠢欲动了吧。输在起跑线的感觉总是不怎么样。 先上结论：    方法 cin cin + setvbuf scanf cin + 关闭同步 cin + 关闭同步 + setvbuf scanf + setvbuf    时间（ms) 10800 10240 388 372 340 340      方法 手动输入 手动输入">
   <link rel="canonical" href="https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/">
 
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title>cpp-io-speedup | THU CST 的零基础代码学习</title>
+  <title>c++的IO优化 | THU CST 的零基础代码学习</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -235,7 +235,7 @@
       <meta itemprop="name" content="THU CST 的零基础代码学习">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">cpp-io-speedup
+        <h2 class="post-title" itemprop="name headline">c++的IO优化
 
           
         </h2>
@@ -269,7 +269,7 @@
           
 
           
-            <span id="/2019-08-31-cpp-io-speedup/" class="post-meta-item leancloud_visitors" data-flag-title="cpp-io-speedup" title="阅读次数">
+            <span id="/2019-08-31-cpp-io-speedup/" class="post-meta-item leancloud_visitors" data-flag-title="c++的IO优化" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -352,7 +352,7 @@
 <h3 id="cin-和关闭同步"><a href="#cin-和关闭同步" class="headerlink" title="cin 和关闭同步"></a>cin 和关闭同步</h3><p>cin慢吗？cin关闭同步后，一点不输scanf。那么如何关闭同步呢？只要在你的代码主函数开头加上：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ios_base::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line"><span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
 
-<p>即可。cin实际上是用的C++新特性——流，而scanf是兼容C的——你甚至能看到打孔机时代留下的痕迹。如此老掉牙的事物用着显然不太安全——关于scanf的危险性，可以移步我的另一篇文章：<a href="https://lhwemn.coding-pages.com/2019-08-31-scanf/">https://lhwemn.coding-pages.com/2019-08-31-scanf/</a><br>那么cin关闭同步分为两步：</p>
+<p>即可。cin实际上是用的C++新特性——流，而scanf是兼容C的——你甚至能看到打孔机时代留下的痕迹。如此老掉牙的事物用着显然不太安全——关于scanf的危险性，可以移步我的另一篇文章：<a href="https://lhwemn.coding-pages.com/2019-08-31-scanf/">scanf——从入门到放弃</a><br>那么cin关闭同步分为两步：</p>
 <ol>
 <li><p><code>ios_base::sync_with_stdio(false);</code>关闭C++和C标准流（即<code>iostream</code>和<code>stdio.h</code>下的I/O）的兼容性。各位可以试一下，这之后如果把cin和scanf混用，很快<strong>就会弹出segment fault</strong>。</p>
 <blockquote>
@@ -432,7 +432,7 @@
     <strong>本文作者： </strong>直角世界</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/" title="cpp-io-speedup">https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/</a>
+    <a href="https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/" title="c++的IO优化">https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>

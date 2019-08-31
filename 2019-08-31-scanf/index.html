@@ -57,18 +57,18 @@
   };
 </script>
 
-  <meta name="description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重—">
+  <meta name="description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：c++的IO优化然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重——只要你知道scanf是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用fgets或者">
 <meta name="keywords" content="c++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="scanf——从入门到放弃">
 <meta property="og:url" content="https://lhwemn.coding-pages.com/2019-08-31-scanf/index.html">
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
-<meta property="og:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重—">
+<meta property="og:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：c++的IO优化然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重——只要你知道scanf是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用fgets或者">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-31T15:01:39.291Z">
+<meta property="og:updated_time" content="2019-08-31T15:05:38.420Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scanf——从入门到放弃">
-<meta name="twitter:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重—">
+<meta name="twitter:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：c++的IO优化然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重——只要你知道scanf是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用fgets或者">
   <link rel="canonical" href="https://lhwemn.coding-pages.com/2019-08-31-scanf/">
 
 
@@ -302,7 +302,7 @@
 
       
         <p>欢迎！</p>
-<p>从C入门的同学们，对<code>scanf</code>一定不陌生。C++入门的同学们最早学的应该是<code>cin</code>和<code>cout</code>——不过很快，就会听到有人说：<code>scanf</code>比<code>cin</code>快N多倍！至于速度怎么样，可以看我的另一篇文章：<a href="https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/">https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/</a><br>然而，无数的人都在奔走相告：放弃<code>scanf</code>吧！不要再用<code>scanf</code>了！实际上也没有那么严重——只要你知道<code>scanf</code>是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用<code>fgets</code>或者<code>getline</code>拿到一整行，存入字符串，再用<code>sscanf</code>处理字符串。</p>
+<p>从C入门的同学们，对<code>scanf</code>一定不陌生。C++入门的同学们最早学的应该是<code>cin</code>和<code>cout</code>——不过很快，就会听到有人说：<code>scanf</code>比<code>cin</code>快N多倍！至于速度怎么样，可以看我的另一篇文章：<a href="https://lhwemn.coding-pages.com/2019-08-31-cpp-io-speedup/">c++的IO优化</a><br>然而，无数的人都在奔走相告：放弃<code>scanf</code>吧！不要再用<code>scanf</code>了！实际上也没有那么严重——只要你知道<code>scanf</code>是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用<code>fgets</code>或者<code>getline</code>拿到一整行，存入字符串，再用<code>sscanf</code>处理字符串。</p>
 <a id="more"></a>
 
 <blockquote>
@@ -431,8 +431,8 @@
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019-08-31-cpp-io-speedup/" rel="prev" title="cpp-io-speedup">
-                  cpp-io-speedup <i class="fa fa-chevron-right"></i>
+                <a href="/2019-08-31-cpp-io-speedup/" rel="prev" title="c++的IO优化">
+                  c++的IO优化 <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
