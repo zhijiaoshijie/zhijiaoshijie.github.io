@@ -330,7 +330,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -370,7 +370,9 @@
         
           
         
-        <span class="site-state-item-count">3</span>
+          
+        
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
@@ -394,6 +396,10 @@
       
         <li class="links-of-blogroll-item">
           <a href="https://dd.miko0.com" title="https://dd.miko0.com" rel="noopener" target="_blank">荡之什</a>
+        </li>
+      
+        <li class="links-of-blogroll-item">
+          <a href="http://www.51lihong.com" title="http://www.51lihong.com" rel="noopener" target="_blank">李洪博客</a>
         </li>
       
     </ul>
@@ -492,6 +498,30 @@
 <script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '96aWVuG5Qg4UHUL4bXPBoSmU-gzGzoHsz',
+    appKey: 'tuAR52q0YP9xTzOWULWDTl18',
+    placeholder: '你好呀！说点什么吧~',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'zh-cn' || 'zh-cn',
+    path: location.pathname
+  });
+}, window.Valine);
+</script>
+
+</body>
+</html>
+['nick', 'mail', 'link'];
   var guest = 'nick,mail,link';
   guest = guest.split(',').filter(item => {
     return GUEST.indexOf(item) > -1;
