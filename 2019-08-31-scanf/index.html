@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
 <meta property="og:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：c++的IO优化然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重——只要你知道scanf是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用fgets或者">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-31T15:05:38.420Z">
+<meta property="og:updated_time" content="2019-09-01T10:44:40.561Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scanf——从入门到放弃">
 <meta name="twitter:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：c++的IO优化然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重——只要你知道scanf是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用fgets或者">
@@ -308,23 +308,6 @@
 <blockquote>
 <p>大多数初学者可能都没有在<code>scanf</code>上停留多久——包括我。那些快速入门教程，清华给非信息学院开设的C课程，以及那些《Primer》重量级以下的那些C/C++入门书，似乎都对这么基础的事情简单略过，只是讲明白它的“用法”，<code>%c %d %a %lf</code>的意义，再给几个能跑的例子让大家照葫芦画瓢，而没有停下来，详细地讲它的“原理”或者“内部执行步骤”。</p>
 </blockquote>
-<p>那么你对<code>scanf</code>又理解到什么程度呢？先举几个简单的例子吧。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>];<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"str:'%s'\n"</span>,s);</span><br><span class="line"><span class="keyword">char</span> c = getchar();</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"char:'%c'\n"</span>,c);</span><br></pre></td></tr></table></figure>
-
-<p>如果输入一行123，回车，会怎么样呢：输出情况是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str:&apos;123&apos;</span><br><span class="line">char:&apos;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure>
-
-<p>getchar()换成getline()也一样，在同样的只输入一行123的情况下，getline()也是会读取那个留下的<code>\n</code>，读了个空行。</p>
-<p>那么下面举个比较复杂的例子：比如说，统计第一个数字前的字符个数，比如“C++11”输出3。如果你这样写：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a) != <span class="number">1</span>)++num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>这里利用scanf的返回值：返回成功解析了的对象的个数。例如，读入3个数字的<code>scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c)</code>如果成功，会返回3。读到输入尽头（例如文件末尾，或者Windows下的键盘输入里，在空行中按Ctrl+Z再按回车）会返回EOF（一个定义好的常量，一般是-1）。返回值也可以用来调试这些scanf问题。</p>
-</blockquote>
-<p>程序会死循环！（你可以在循环里打印点东西来证明，它不是等待输入，确实是死循环了）实际上需要这样：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> c=<span class="number">5</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a) != <span class="number">1</span> &amp;&amp; <span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;c) == <span class="number">1</span>)++num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>（当然，没有考虑输入“C++”之类没有数字的情况，这个还需要额外的代码）</p>
 <h3 id="scanf的工作原理"><a href="#scanf的工作原理" class="headerlink" title="scanf的工作原理"></a>scanf的工作原理</h3><p>我们在理解scanf时，一定要记住：scanf是处理输入流的函数，而不是一个“输入”函数。scanf会一个个从输入流拿出字符，而那些不匹配的符号（比如读%s时遇到的空白字符）也会被放回输入流。</p>
 <p>scanf的工作原理分为三步：</p>
 <ol>
@@ -356,6 +339,57 @@
 </li>
 </ol>
 <p>另外，scanf在扫过格式化串时，只要一个地方匹配出错就会停止。并且，那个不满足要求的字符也会被放回输入流。</p>
+<h3 id="几个有用的特性"><a href="#几个有用的特性" class="headerlink" title="几个有用的特性"></a>几个有用的特性</h3><h4 id="进制和浮点数"><a href="#进制和浮点数" class="headerlink" title="进制和浮点数"></a>进制和浮点数</h4><p>%e，%f，%g，%a，%E，%F，%G，%A都代表读入浮点数。</p>
+<p>%i代表十进制；%o代表八进制；%x，%X代表十六进制（都是有符号的）。%u代表无符号十进制。</p>
+<blockquote>
+<p>这些在进制转换里很有用——<code>sprintf</code>或者<code>sscanf</code>就能解决进制转换，而不用手写转换代码了。</p>
+</blockquote>
+<h4 id="星号（学名：滞后赋值）"><a href="#星号（学名：滞后赋值）" class="headerlink" title="星号（学名：滞后赋值）"></a>星号（学名：滞后赋值）</h4><h4 id="d，-s"><a href="#d，-s" class="headerlink" title="%*d，%*s"></a><code>%*d</code>，<code>%*s</code></h4><p>相当于跳过本输入。会读入一个数字<code>%*d</code>或者字符串<code>%*s</code>，正常读取，然后丢掉。不计入返回值里的“成功读取的个数”，也不占用后面的那些地址参数。</p>
+<p>举例：处理一个加法式子“123+456=579”，提取所有数字：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d%*[^d]%d%*[^d]%d"</span>,%a,%b,%c);</span><br></pre></td></tr></table></figure>
+
+<p>即可。</p>
+<h4 id="数字（学名：最大字符宽度）"><a href="#数字（学名：最大字符宽度）" class="headerlink" title="数字（学名：最大字符宽度）"></a>数字（学名：最大字符宽度）</h4><p><code>%10d</code>，<code>%10s</code></p>
+<p>最多只读这么多个字符。</p>
+<h4 id="方括号"><a href="#方括号" class="headerlink" title="方括号"></a>方括号</h4><p><code>%[d]s</code>，或者<code>%*[d]</code></p>
+<p>匹配若干个方括号内的字符，直到遇到不符合的。<code>%[d]s</code>会读若干个d直到遇到非d字符；<code>%*[d]</code>则会读若干个d丢弃。例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%*[d]%s"</span>,&amp;name);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,name);</span><br></pre></td></tr></table></figure>
+
+<p>输入<code>ddd111</code>会被<code>%*[d]</code>部分丢弃<code>ddd</code>，最后输出<code>111</code>.</p>
+<p>方括号内的格式：</p>
+<ul>
+<li><p>[ab]代表a和b都符合。</p>
+</li>
+<li><p>[0-9]代表0和9之间的所有字符都匹配。注：这并不是固定用法，而是ASCII码匹配（包含0和9）。例如，[0-;]包含数字0~9，逗号和分号（ASCII码表里，9后面是逗号，然后是分号）。</p>
+<blockquote>
+<p>实际上[0-9]的0和9掉个个也没关系——[9-0]也可以表达同样的含义。</p>
+</blockquote>
+</li>
+<li><p>[^a]代表除了a以外的所有字符。</p>
+</li>
+</ul>
+<p>以上三点可以任意组合：<code>[0-9,a-z]</code>代表匹配数字，逗号，和小写字母。<code>[^0-9,a-z]</code>代表不匹配这些字符。</p>
+<p>例如：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%*[0-9,a-z]%s"</span>,&amp;name);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,name);</span><br></pre></td></tr></table></figure>
+
+<p>输入<code>abc,1,23,&amp;d</code>，输出<code>&amp;d</code>。</p>
+<p>那么你对<code>scanf</code>又理解到什么程度呢？举几个简单的例子吧。</p>
+<h3 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>];<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"str:'%s'\n"</span>,s);</span><br><span class="line"><span class="keyword">char</span> c = getchar();</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"char:'%c'\n"</span>,c);</span><br></pre></td></tr></table></figure>
+
+<p>如果输入一行123，回车，会怎么样呢：输出情况是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str:&apos;123&apos;</span><br><span class="line">char:&apos;</span><br><span class="line">&apos;</span><br></pre></td></tr></table></figure>
+
+<p>getchar()换成getline()也一样，在同样的只输入一行123的情况下，getline()也是会读取那个留下的<code>\n</code>，读了个空行。</p>
+<p>那么下面举个比较复杂的例子：比如说，统计第一个数字前的字符个数，比如“C++11”输出3。如果你这样写：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,num=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a) != <span class="number">1</span>)++num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里利用scanf的返回值：返回成功解析了的对象的个数。例如，读入3个数字的<code>scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c)</code>如果成功，会返回3。读到输入尽头（例如文件末尾，或者Windows下的键盘输入里，在空行中按Ctrl+Z再按回车）会返回EOF（一个定义好的常量，一般是-1）。返回值也可以用来调试这些scanf问题。</p>
+</blockquote>
+<p>程序会死循环！（你可以在循环里打印点东西来证明，它不是等待输入，确实是死循环了）实际上需要这样：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,num=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> c=<span class="number">5</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a) != <span class="number">1</span> &amp;&amp; <span class="built_in">scanf</span>(<span class="string">"%c"</span>,&amp;c) == <span class="number">1</span>)++num;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>,num);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（当然，没有考虑输入“C++”之类没有数字的情况，这个还需要额外的代码）</p>
 <h3 id="关于回车"><a href="#关于回车" class="headerlink" title="关于回车"></a>关于回车</h3><p>读文件和从键盘输入的一大区别在于回车：读文件可以一股脑读到底，而键盘键入时，键入一行，回车之后这一行被电脑读入，然后电脑等待下一行。不过，电脑是只能看到输入流的，他看到你的回车也只是一个<code>\n</code>字符而已。</p>
 <p>也就是，数据从用户到程序内一共有三层：用户在控制台敲一行内容 &gt; 用户按回车，内容被读入进入输入流缓冲区 &gt; 被程序内的scanf等函数读入。</p>
 <p>另外一点：C++并没有什么简洁而跨平台的函数可以做到，从键盘（标准输入）读入时，可以不等回车就读入字符，比方说，捕获用户按下的每一个按键。<code>conio.h</code>头文件的<code>_getch()</code>函数是从CRT（C runtime）维度获得实时按键的，不在C标准里，而它在某些平台（比如UWP）就不能工作。</p>
@@ -375,7 +409,7 @@
 <p>还要考虑，如果用户直接按回车，s内的东西就是未初始化的…所以在%前面加一个空格，代表跳过前置的任意个空白字符：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">" %19[^ \n]"</span>,s);</span><br></pre></td></tr></table></figure>
 
-<p>就不再展开了。</p>
+<p>就不再展开了。通过这些例子，你应该看明白了：scanf大概真的很不适合读用户输入，它最方便的还是读那些确定格式的（甚至，最好是确定数量的）输入。</p>
 <blockquote>
 <p>引用paxdiablo在stackoverflow上的话结束本节：“The whole point of <code>scanf</code> is scan-formatted and there is little more <em>unformatted</em> than user input”（scanf意图是读那些有格式的输入，而没什么比用户输入更缺乏‘格式’了）。</p>
 </blockquote>
@@ -485,7 +519,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#scanf的工作原理"><span class="nav-number">1.</span> <span class="nav-text">scanf的工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于回车"><span class="nav-number">2.</span> <span class="nav-text">关于回车</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边角情况"><span class="nav-number">3.</span> <span class="nav-text">边角情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#scanf的工作原理"><span class="nav-number">1.</span> <span class="nav-text">scanf的工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几个有用的特性"><span class="nav-number">2.</span> <span class="nav-text">几个有用的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进制和浮点数"><span class="nav-number">2.1.</span> <span class="nav-text">进制和浮点数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#星号（学名：滞后赋值）"><span class="nav-number">2.2.</span> <span class="nav-text">星号（学名：滞后赋值）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d，-s"><span class="nav-number">2.3.</span> <span class="nav-text">%*d，%*s</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字（学名：最大字符宽度）"><span class="nav-number">2.4.</span> <span class="nav-text">数字（学名：最大字符宽度）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方括号"><span class="nav-number">2.5.</span> <span class="nav-text">方括号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的例子"><span class="nav-number">3.</span> <span class="nav-text">简单的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于回车"><span class="nav-number">4.</span> <span class="nav-text">关于回车</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边角情况"><span class="nav-number">5.</span> <span class="nav-text">边角情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">6.</span> <span class="nav-text">结语</span></a></li></ol></div>
         
       </div>
       <!--/noindex-->
