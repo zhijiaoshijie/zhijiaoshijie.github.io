@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="THU CST 的零基础代码学习">
 <meta property="og:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：c++的IO优化然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重——只要你知道scanf是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用fgets或者">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-01T10:44:40.561Z">
+<meta property="og:updated_time" content="2019-09-01T13:58:22.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="scanf——从入门到放弃">
 <meta name="twitter:description" content="欢迎！ 从C入门的同学们，对scanf一定不陌生。C++入门的同学们最早学的应该是cin和cout——不过很快，就会听到有人说：scanf比cin快N多倍！至于速度怎么样，可以看我的另一篇文章：c++的IO优化然而，无数的人都在奔走相告：放弃scanf吧！不要再用scanf了！实际上也没有那么严重——只要你知道scanf是怎么运作的就好。先给解决方案吧：不想用scanf的同学可以先用fgets或者">
@@ -351,11 +351,12 @@
 <p>即可。</p>
 <h4 id="数字（学名：最大字符宽度）"><a href="#数字（学名：最大字符宽度）" class="headerlink" title="数字（学名：最大字符宽度）"></a>数字（学名：最大字符宽度）</h4><p><code>%10d</code>，<code>%10s</code></p>
 <p>最多只读这么多个字符。</p>
-<h4 id="方括号"><a href="#方括号" class="headerlink" title="方括号"></a>方括号</h4><p><code>%[d]s</code>，或者<code>%*[d]</code></p>
+<h4 id="方括号"><a href="#方括号" class="headerlink" title="方括号"></a>方括号</h4><p><code>%[d]</code>，或者<code>%*[d]</code></p>
 <p>匹配若干个方括号内的字符，直到遇到不符合的。<code>%[d]s</code>会读若干个d直到遇到非d字符；<code>%*[d]</code>则会读若干个d丢弃。例如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%*[d]%s"</span>,&amp;name);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,name);</span><br></pre></td></tr></table></figure>
 
-<p>输入<code>ddd111</code>会被<code>%*[d]</code>部分丢弃<code>ddd</code>，最后输出<code>111</code>.</p>
+<p>输入<code>ddd111</code>会被<code>%*[d]</code>部分丢弃<code>ddd</code>，最后输出<code>111</code>。</p>
+<p>注意：这个特性不能和%d等混搭，或者说，%后的方括号实际上取代了%s中的s的位置，代表读入（或者用星号丢弃）一个字符串。比如：你不能写<code>%[0-3]d</code>来表示你想把读到的东西转化为数字。这个d会被解释称单独的符号——前面介绍过（那个“%d，%d，%d”的例子），scanf会在读完0-3数字（也就是遇到第一个不符合0-3的字符时）把它与d匹配。</p>
 <p>方括号内的格式：</p>
 <ul>
 <li><p>[ab]代表a和b都符合。</p>
@@ -372,7 +373,7 @@
 <p>例如：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%*[0-9,a-z]%s"</span>,&amp;name);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s"</span>,name);</span><br></pre></td></tr></table></figure>
 
-<p>输入<code>abc,1,23,&amp;d</code>，输出<code>&amp;d</code>。</p>
+<p>输入<code>abc,1,23,#d</code>，输出<code>#d</code>。</p>
 <p>那么你对<code>scanf</code>又理解到什么程度呢？举几个简单的例子吧。</p>
 <h3 id="简单的例子"><a href="#简单的例子" class="headerlink" title="简单的例子"></a>简单的例子</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">20</span>];<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"str:'%s'\n"</span>,s);</span><br><span class="line"><span class="keyword">char</span> c = getchar();</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"char:'%c'\n"</span>,c);</span><br></pre></td></tr></table></figure>
 
