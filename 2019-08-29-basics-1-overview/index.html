@@ -66,7 +66,7 @@
 <meta property="og:description" content="欢迎！ 这里是清华计算机系徐明星老师在16年开设的《程序设计基础（30240233-1）》课程的同步笔记整理。第一节课马上要开始啦！找个（后排的）位置坐好，开始上课吧！ 对了，首先问一下，你也是初入代码的新人吗？如果你已经有一定基础，跳过本节课，甚至整个程设基础课程吧。这门课是讲给那些一点点基础都没有，可能连命令行和开发环境是什么都不知道的同学们，就像三年前的我一样。我明白零基础入门的痛苦。  三">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/08/31/e53MDKakJL6SThb.jpg">
-<meta property="og:updated_time" content="2019-08-31T15:16:23.537Z">
+<meta property="og:updated_time" content="2019-09-07T14:08:52.300Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="程设基础 第一周：C++第一行代码">
 <meta name="twitter:description" content="欢迎！ 这里是清华计算机系徐明星老师在16年开设的《程序设计基础（30240233-1）》课程的同步笔记整理。第一节课马上要开始啦！找个（后排的）位置坐好，开始上课吧！ 对了，首先问一下，你也是初入代码的新人吗？如果你已经有一定基础，跳过本节课，甚至整个程设基础课程吧。这门课是讲给那些一点点基础都没有，可能连命令行和开发环境是什么都不知道的同学们，就像三年前的我一样。我明白零基础入门的痛苦。  三">
@@ -395,8 +395,18 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br><span class="line">--------------------------------</span><br><span class="line">Process exited after 0.132 seconds with return value 0</span><br><span class="line">请按任意键继续. . .</span><br></pre></td></tr></table></figure>
 
 <p>恭喜！你已经成功地执行了“往屏幕上显示几个大字：Hello World!”这个程序！</p>
+<p>顺带一提，Dev C++ 并不完美——它有一些崩溃点，比如打开过大的文件（例如你不小心打开了个.exe），以及F5debug闪退。解决debug闪退有两种方法：</p>
+<ol>
+<li>编译器配置加入-g选项；</li>
+<li>新建一个工程，然后放入你的文件。</li>
+</ol>
+<p>以及，似乎有的同学们的Dev C++在F11后只会闪过一个黑窗口就退出了——如果是这种情况的话，把代码改成：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   	<span class="built_in">cout</span>&lt;&lt;<span class="string">"Hello World!"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ol>
+<p>   即可。会在关闭前显示“请按任意键继续…”，按任意键后，程序才会退出。<code>system(&quot;pause&quot;);</code>要放在代码的末尾，确切来说是要在主函数的每一个<code>return 0</code>前面加一行，以在程序运行完后停住程序。</p>
 <h4 id="写一段程序的实际过程（不感兴趣的可以跳过）"><a href="#写一段程序的实际过程（不感兴趣的可以跳过）" class="headerlink" title="写一段程序的实际过程（不感兴趣的可以跳过）"></a>写一段程序的实际过程（不感兴趣的可以跳过）</h4><ol>
 <li>把代码（就是刚才你们贴的那7行东西）写到一个文本文件里。然后把他的后缀名（或者叫扩展名）改成 cpp 。</li>
 </ol>
